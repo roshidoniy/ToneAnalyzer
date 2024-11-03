@@ -49,8 +49,10 @@ Once the setup is complete, you can start the application using:
 
 ```zsh
 npm run dev
-The app will be available at http://localhost:5173 in your web browser (default Vite port).
 ```
+
+The app will be available at http://localhost:5173 in your web browser (default Vite port).
+
 
 Usage
 
