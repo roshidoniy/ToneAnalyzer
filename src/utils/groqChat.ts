@@ -1,5 +1,5 @@
 import Groq from "groq-sdk";
-const groq = new Groq({ apiKey: "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", dangerouslyAllowBrowser: true });
+const groq = new Groq({ apiKey: import.meta.env.VITE_GROQ_API_KEY, dangerouslyAllowBrowser: true });
 
 type MessageType = {
   message: string
