@@ -29,25 +29,28 @@ Make sure you have the following installed on your machine:
 
 1. Clone the repository:
 
-   
+  ```zsh
    git clone https://github.com/roshidoniy/ToneAnalyzer.git
    cd tone-analyzer
-   
+  ```
  2. Install the dependencies:
 
+```zsh
 npm install
-
+```
  3. Set up environment variables:
 Create a .env file in the root of the project and add your Groq API key:
 
-VITE_GROQ_API_KEY=your_api_key_here
+```VITE_GROQ_API_KEY=your_api_key_here```
 
 Running the Application
 
 Once the setup is complete, you can start the application using:
 
+```zsh
 npm run dev
 The app will be available at http://localhost:5173 in your web browser (default Vite port).
+```
 
 Usage
 
