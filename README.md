@@ -1,50 +1,75 @@
-# React + TypeScript + Vite
+# Tone Analyzer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Tone Analyzer is a simple React application that allows users to analyze the tone of their text inputs using the Groq chat API. This project serves as a demonstration of how to integrate a third-party API into a React application for natural language processing.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Text area for user input
+- Button to analyze the tone of the entered text
+- Displays the analysis result below the input area
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- React: A JavaScript library for building user interfaces.
+- TypeScript: A superset of JavaScript that adds static typing.
+- Vite: A fast build tool and development server for modern web projects.
+- Groq SDK: A JavaScript SDK to interact with the Groq chat API.
+- CSS: For basic styling of the components.
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Prerequisites
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Make sure you have the following installed on your machine:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- Node.js (version 14 or later)
+- npm (Node Package Manager)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Installation
+
+1. Clone the repository:
+
+   
+   git clone https://github.com/roshidoniy/ToneAnalyzer.git
+   cd tone-analyzer
+   
+ 2. Install the dependencies:
+
+npm install
+
+ 3. Set up environment variables:
+Create a .env file in the root of the project and add your Groq API key:
+
+VITE_GROQ_API_KEY=your_api_key_here
+
+Running the Application
+
+Once the setup is complete, you can start the application using:
+
+npm run dev
+The app will be available at http://localhost:5173 in your web browser (default Vite port).
+
+Usage
+
+ 1. Enter your text in the provided textarea.
+ 2. Click the “Check” button to analyze the tone of your input.
+ 3. The result will be displayed below the input area.
+
+Code Overview
+
+Components
+
+ • App.tsx: The main application component that renders the ToneAnalyzer component.
+ • ToneAnalyzer.tsx: Contains the logic for text input and tone analysis. It manages user input and displays the analysis result.
+ • groqChat.ts: Utility file for interacting with the Groq API to analyze the tone of the input text.
+
+ToneAnalyzer Component
+
+This component utilizes React hooks to manage state and references:
+
+ • useRef: For accessing the textarea DOM element.
+ • useState: For managing message state and the disabled state of the button during analysis.
+
+Groq API Integration
+
+The getMessage function in groqChat.ts sends a request to the Groq API and receives a response with the tone analysis based on the user input.
